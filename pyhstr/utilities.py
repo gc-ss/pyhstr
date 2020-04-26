@@ -10,13 +10,13 @@ class EntryCounter:
 
     def inc(self, page_size):
         self.value += 1
-        self.value = self.value % page_size
+        self.value %= page_size
         if self.value == 0:
             self.app.page.inc(self.app.user_interface.get_number_of_pages())
 
     def dec(self, page_size):
         self.value -= 1
-        self.value = self.value % page_size
+        self.value %= page_size
         # in both places, we are subtracting -1
         # because indexing starts from zero
         if self.value == (page_size - 1):
@@ -53,7 +53,6 @@ class PageCounter:
 
         ... where -1+1 happens to cancel itself.
         """
-
         self.value = (self.value % total_pages) + 1
 
     def dec(self, total_pages):
