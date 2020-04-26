@@ -64,6 +64,7 @@ class PageCounter:
         """
         self.value = ((self.value - 2) % total_pages) + 1
 
+
 def sort(thing):
     return [
         x[0] for x in sorted(
