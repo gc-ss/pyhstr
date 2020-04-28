@@ -1,6 +1,7 @@
 import curses
 import os
 
+
 from pyhstr.user_interface import UserInterface
 from pyhstr.utilities import (
     echo, read, sort, write
@@ -20,8 +21,8 @@ class App:
         self.case_sensitivity = False
 
     def search(self):
-        self.selected.value = 0
-        self.page.value = 1
+        self.user_interface.page.selected.value = 0
+        self.user_interface.page.value = 1
 
         if self.case_sensitivity:
             self.all_entries = [
@@ -112,6 +113,6 @@ def main(stdscr):
             app.search_string += chr(user_input)
             app.search()
 
-
 if __name__ == "__main__":
     curses.wrapper(main)
+    
