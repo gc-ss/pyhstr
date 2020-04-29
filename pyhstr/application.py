@@ -17,7 +17,6 @@ class App:
         self.user_interface = UserInterface(self)
         self.all_entries = sort(read(PYTHON_HISTORY))
         self.to_restore = self.all_entries[:]
-        self.search_string = ""
         self.case_sensitivity = False
 
     def search(self):
@@ -26,11 +25,11 @@ class App:
 
         if self.case_sensitivity:
             self.all_entries = [
-                cmd for cmd in self.all_entries if self.search_string in cmd
+                cmd for cmd in self.all_entries if self.user_interface.search_string in cmd
             ]
         else:
             self.all_entries = [
-                cmd for cmd in self.all_entries if self.search_string.lower() in cmd.lower()
+                cmd for cmd in self.all_entries if self.user_interface.search_string.lower() in cmd.lower()
             ]
 
         self.user_interface.populate_screen()
@@ -99,8 +98,8 @@ def main(stdscr):
             app.user_interface.populate_screen()
 
         elif user_input == curses.KEY_BACKSPACE:
-            app.search_string = app.search_string[:-1]
-            if not app.search_string:
+            app.user_interface.search_string = app.user_interface.search_string[:-1]
+            if not app.user_interface.search_string:
                 app.user_interface.page.selected.value = 0
             app.all_entries = app.to_restore[:]
             app.search()
@@ -110,7 +109,7 @@ def main(stdscr):
             app.delete_from_history(command)
 
         else:
-            app.search_string += chr(user_input)
+            app.user_interface.search_string += chr(user_input)
             app.search()
 
 # don't forget to remove this
