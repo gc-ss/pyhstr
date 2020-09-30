@@ -1,6 +1,6 @@
-"""History manager extension for the standard Python shell"""
+"""History manager extension for the standard Python shell and IPython"""
 
-__version__ = '0.0.2'
+__version__ = '0.0.3'
 
 import curses
 import sys
