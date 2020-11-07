@@ -5,7 +5,8 @@ __version__ = '0.1.2'
 import curses
 import sys
 
-from pyhstr.application import IS_IPYTHON, main
+from pyhstr.application import main, SHELL
+from pyhstr.utilities import Shell
 
 hh = object()
 original = sys.displayhook
@@ -16,7 +17,7 @@ def spam(arg):
     else:
         original(arg)
 
-if not IS_IPYTHON:
+if SHELL != Shell.IPYTHON:
     sys.displayhook = spam
 else:
     from IPython.core.magic import register_line_magic
