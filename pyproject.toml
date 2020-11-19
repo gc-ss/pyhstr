@@ -1,9 +1,10 @@
 [tool.poetry]
 name = "pyhstr"
-version = "0.2.1"
+version = "0.2.2"
 description = "History suggest box for the standard Python shell, IPython, and bpython"
 authors = ["adder46 <dedmauz69@gmail.com>"]
 license = "MIT"
+readme = "README.md"
 
 [tool.poetry.dependencies]
 python = ">=3.6"
