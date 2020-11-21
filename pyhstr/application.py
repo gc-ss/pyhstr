@@ -98,7 +98,9 @@ class App:
 
             elif SHELL == Shell.BPYTHON:
                 self.raw_history = [cmd for cmd in self.raw_history if cmd != command]
-                write(SHELLS[Shell.BPYTHON]["hist"], self.raw_history)
+                history_path = SHELLS[Shell.BPYTHON]["hist"]
+                assert history_path is not None
+                write(history_path, self.raw_history)
 
             else:
                 pass # future implementations
