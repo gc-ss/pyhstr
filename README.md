@@ -50,7 +50,7 @@ Then clone the repo, cd into it, make a venv, spawn the shell, and install the p
 $ git clone https://github.com/adder46/pyhstr
 $ cd pyhstr
 $ poetry env use python3
-$ poetry shell
+$ . .venv/bin/activate
 $ poetry install
 ```
 
