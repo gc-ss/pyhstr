@@ -4,6 +4,10 @@ version = "0.2.3"
 description = "History suggest box for the standard Python shell, IPython, and bpython"
 authors = ["adder46 <dedmauz69@gmail.com>"]
 license = "MIT"
+packages = [
+    { include = "pyhstr" },
+    { include = "tests" },
+]
 readme = "README.md"
 
 [tool.poetry.dependencies]
