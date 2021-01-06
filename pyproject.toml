@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyhstr"
-version = "0.4.1"
+version = "0.5.0"
 description = "History suggest box for the standard Python shell, IPython, and bpython"
 authors = ["adder46 <dedmauz69@gmail.com>"]
 license = "MIT"
